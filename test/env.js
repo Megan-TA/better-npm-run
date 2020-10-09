@@ -5,3 +5,6 @@ if (process.env.TEST_ENV !== "TEST_VALUE") {
 if (process.env.FOO !== "bar") {
   throw new Error("env params are missing")
 }
+
+
+console.log(process.env.project, process.env.name)

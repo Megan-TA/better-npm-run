@@ -1,16 +1,17 @@
 {
-  "name": "better-npm-run",
-  "description": "Better NPM scripts runner",
-  "version": "0.1.1",
+  "name": "better-npm-run2",
+  "description": "Better NPM scripts runner base on better-npm-run",
+  "version": "0.2.0",
   "license": "MIT",
-  "author": "Benjamin Orozco <benoror@gmail.com>",
+  "author": "knight <2658924454@qq.com>",
   "contributors": [
     "Benjamin Orozco <benoror@gmail.com>",
-    "Kent C. Dodds <kent@doddsfamily.us>"
+    "Kent C. Dodds <kent@doddsfamily.us>",
+    "knight <2658924454@qq.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/benoror/better-npm-run.git"
+    "url": "git@github.com:Megan-TA/better-npm-run.git"
   },
   "main": "index.js",
   "bin": {
@@ -19,6 +20,7 @@
   },
   "scripts": {
     "test:env": "node index.js test:env",
+    "test:env-project": "node index.js test:env project=a name=projectA",
     "test:env-extend": "TEST_ENV2=envvar node index.js test:env-extend",
     "test:params": "node index.js --silent test:params --test",
     "test:command:object": "node index.js test:command:object",

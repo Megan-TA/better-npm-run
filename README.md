@@ -51,11 +51,18 @@ To this:
   "scripts": {
     "build:dist": "better-npm-run build:dist",
     "build:prod": "better-npm-run build:prod",
+    "build:prod:projectA": "better-npm-run build:prod project=A",
     "test": "better-npm-run test"
   },
   "betterScripts": {
     "build:dist": "webpack --config $npm_package_webpack --progress --colors",
     "build:prod": {
+      "command": "webpack --config $npm_package_webpack --progress --colors",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "build:prod:projectA": {
       "command": "webpack --config $npm_package_webpack --progress --colors",
       "env": {
         "NODE_ENV": "production"

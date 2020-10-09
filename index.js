@@ -7,6 +7,12 @@ program
   .option('-s, --silent', 'silent')
   .parse(process.argv);
 var scriptName = program.args[0];
+var resetEnvParams = []
+
+if (program.args.length > 1) {
+  resetEnvParams = program.args.slice(1)
+}
+
 
 if (!program.silent) {
   console.log('running better-npm-run in', process.cwd());
@@ -37,7 +43,7 @@ if(!program.silent) {
   console.log('Executing script: ' + scriptName + '\n');
 }
 
-exec(pkg.betterScripts[scriptName], program, function (error, stdout, stderr) {
+exec(pkg.betterScripts[scriptName], program, resetEnvParams, function (error, stdout, stderr) {
   process.stderr.write(stderr);
   process.stdout.write(stdout);
   if(error !== null) {
